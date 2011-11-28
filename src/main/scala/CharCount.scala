@@ -35,11 +35,6 @@ object CharCount {
   val eval = new Eval
   val config = eval[Config](new File(charcountDir + "config.scala"))
 
-  def countChar(copy: Boolean): Int = {
-    val pathSet = if (copy) config.pathMap("copy") else config.pathMap("write")
-    pathSet.map(path => NKF.fromFile(path.path, "-w").length).foldLeft(0)(_ + _)
-  }
-
   def countMap: Map[String, Int] = {
     val totalPath = totalLabel -> ((config.pathMap values) reduce { (result, pathSet) => result +++ pathSet })
     config.pathMap + totalPath mapValues {
