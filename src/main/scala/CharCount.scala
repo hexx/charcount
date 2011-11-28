@@ -172,7 +172,7 @@ object CharCount {
   }
 }
 
-class PomodoroTimerApp extends xsbti.AppMain {
+class CharCountTimerApp extends xsbti.AppMain {
   def run(config: xsbti.AppConfiguration) = {
     CharCount.main(config.arguments)
     Exit(0)
