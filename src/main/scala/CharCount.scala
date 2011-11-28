@@ -172,7 +172,7 @@ object CharCount {
   }
 }
 
-class CharCountTimerApp extends xsbti.AppMain {
+class CharCountApp extends xsbti.AppMain {
   def run(config: xsbti.AppConfiguration) = {
     CharCount.main(config.arguments)
     Exit(0)
