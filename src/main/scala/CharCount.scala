@@ -75,12 +75,13 @@ object CharCount {
   def countOnDay(obj: DBObject, prev: DBObject): Map[String, Int] = {
     val countObj = new MongoDBObject { val underlying = obj.as[DBObject]("count") }
     val countPrev = new MongoDBObject { val underlying = prev.as[DBObject]("count") }
-    (for {
+    val map = for {
       (label, count) <- countObj
       countPrev <- catching(classOf[NoSuchElementException]) opt countPrev.as[Int](label)
     } yield {
       label.asInstanceOf[String] -> (count.asInstanceOf[Int] - countPrev.asInstanceOf[Int])
-    }).toMap
+    }
+    map.toMap - totalLabel + (totalLabel -> map(totalLabel))
   }
 
   def printCount(obj: DBObject, prev: DBObject) {
