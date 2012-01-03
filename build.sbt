@@ -17,7 +17,8 @@ libraryDependencies ++= Seq(
   "com.mongodb.casbah" %% "casbah" % "2.1.5-1",
   "com.twitter" % "util-eval" % "1.12.4",
   "com.github.scopt" %% "scopt" % "1.1.2",
-  "com.github.scala-incubator.io" %% "scala-io-file" % "0.2.0",
+  "com.github.scala-incubator.io" %% "scala-io-core" % "0.3.0",
+  "com.github.scala-incubator.io" %% "scala-io-file" % "0.3.0",
   "com.github.hexx" %% "hexx-common" % "0.0.1"
 )
 
