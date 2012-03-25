@@ -2,7 +2,7 @@ seq(conscriptSettings :_*)
 
 organization := "com.github.hexx"
 
-name := "CharCount"
+name := "charcount"
 
 version := "0.0.1"
 
